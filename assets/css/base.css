@@ -1,0 +1,189 @@
+/* Reset CSS*/
+*{
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+ 
+}
+
+:root{
+    --while-color: #fff;
+    --text-color:#555;
+    --primary-color: #07cc42;
+    --border-color: #dbdbdb;
+    --star-gold-color: #ffce3e;
+}
+html{
+    font-size: 62.5%;
+    line-height: 1.2rem;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    height: 3500px;
+    max-width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/*Responsive*/
+.grid{
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+#grid__full-width{
+    float: left;
+    width: 100%;
+}
+
+.grid__row{
+    display: flex;
+    flex-wrap:wrap;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.grid__col-2{
+    width: 50%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.grid__col-3{
+    width: 33.333333%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+.grid__col-4{
+    width: 25%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+.grid__col-5{
+    width: 24%;
+}
+
+
+
+/* Animation */
+@keyframes fadeIn{
+    from{
+        opacity: 0;  /* độ trong suốt */
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes growth{
+    from{
+        transform: scale(var(--growth-from));
+    }
+    to{
+        transform: scale(var(--growth-to));
+    }
+}
+
+@keyframes slide{
+    0%{
+        transform: scale(1.1);
+
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+
+@keyframes captionText{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+
+@keyframes discoloration{
+    0%{
+        color: #fff;
+    }
+    100%{
+        color: rgb(245, 241, 8);
+    }
+}
+
+/*Modal*/
+.modal{
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    animation: fadeIn linear 0.2s;
+    z-index: 99;
+
+}
+
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.modal__body{
+    --growth-from:0.7;
+    --growth-to:1;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    border-radius: 5px;
+    animation: growth linear 0.1s;
+}
+
+
+/* Button */
+.btn{
+    min-width: 130px;
+    height: 35px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.5rem;
+    padding: 0 12px;
+    outline: none;
+    cursor: pointer;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.6rem;
+}
+
+.btn.btn--primary{
+    background-color: var(--primary-color);
+    color: var(--while-color);
+}
+
+/* vô hiệu hóa 1 nút nào đó*/
+.btn.btn--disable{
+    cursor: default;
+    background-color: #999;
+    color:#ccc;
+}
+
+.btn.btn--size-s{
+    height: 32px;
+    font-size: 1.3rem;
+    padding: 0 5px;
+}
